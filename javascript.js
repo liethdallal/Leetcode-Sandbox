@@ -30,3 +30,28 @@
   
 
 // console.log(isPalindrome(10));
+
+// 387. First Unique Character in a String
+// Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+function firstUniqChar(s) {
+    // Step 1: Initialize a dictionary/object to store character frequencies
+    const charFrequency = {};
+
+    // Step 2: Count character frequencies
+    for (let i = 0; i < s.length; i++) {
+        const char = s[i];
+        charFrequency[char] = (charFrequency[char] || 0) + 1;
+    }
+
+    // Step 3: Find the first non-repeating character
+    for (let i = 0; i < s.length; i++) {
+        const char = s[i];
+        if (charFrequency[char] === 1) {
+            return i; // Return the index of the first non-repeating character
+        }
+    }
+
+    // Step 4: Handle cases where no non-repeating character exists
+    return -1;
+}
+firstUniqChar("aabba")
