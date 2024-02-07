@@ -64,27 +64,50 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // 13. Roman to Integer
 // Given a roman numeral, convert it to an integer.
-var romanToInt = function(s) {
-    const symbolValue = {
-        "I": 1,
-        "V": 5,
-        "X": 10,
-        "L": 50,
-        "C": 100,
-        "D": 500,
-        "M": 1000
-    };
+// var romanToInt = function(s) {
+//     const symbolValue = {
+//         "I": 1,
+//         "V": 5,
+//         "X": 10,
+//         "L": 50,
+//         "C": 100,
+//         "D": 500,
+//         "M": 1000
+//     };
 
-    const firstSymbol = s[0];
-    const value = symbolValue[firstSymbol];
+//     let result = 0;
+//     for (let i = 0; i < s.length; i++) {
+//         const currentSymbolValue = symbolValue[s[i]];
+//         const nextSymbolValue = symbolValue[s[i + 1]];
+        
+//         if (nextSymbolValue > currentSymbolValue) {
+//             result += nextSymbolValue - currentSymbolValue;
+//             i++; // Skip the next symbol as it's already handled
+//         } else {
+//             result += currentSymbolValue;
+//         }
+//     }
+    
+//     return result;
+// };
+// 14. Longest Common Prefix
+// Write a function to find the longest common prefix string amongst an array of strings.
 
-    // If the first symbol is "I", subtract its value from the remaining string
-    if (firstSymbol === "I") {
-        return parseInt(s.substring(1)) - value;
+// If there is no common prefix, return an empty string "".
+var longestCommonPrefix = function(strs) {
+    if (strs.length === 0) return "";
+
+    let prefix = "";
+
+    for (let i = 0; i < strs[0].length; i++) {
+        let char = strs[0][i];
+        
+        for (let j = 1; j < strs.length; j++) {
+            if (strs[j][i] !== char || i === strs[j].length) {
+                return prefix;
+            }
+        }
+        prefix += char;
     }
-
-    // For now, just return the original string
-    return s;
+    return prefix;
 };
-
-console.log(romanToInt("II"))
