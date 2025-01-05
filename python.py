@@ -93,3 +93,25 @@
 # # Convert list of tuples to a dictionary
 # new_dict = dict(tuple_list)
 # print(new_dict)  # {'a': 10, 'c': 3, 'd': 4}
+# Declare Real temp 
+# Declare string unit 
+# Declare Real convTemp 
+
+# Display "Enter the temperature value: "
+
+# Input temp
+
+# Display "Enter the unit (C/F): "
+
+# Input unit 
+
+# If unit is == C Then 
+#    convTemp = (temp-32) * (5/9)
+#    return 
+#    Display temp,"F is equal to ", convTemp, "C"
+   
+# If unit is == F Then 
+#    convTemp = (F-32) * (5/9)
+#    return 
+#    Display temp,"C is equal to ", convTemp, "F"
+   
