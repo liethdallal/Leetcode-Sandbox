@@ -115,3 +115,9 @@
 #    return 
 #    Display temp,"C is equal to ", convTemp, "F"
    
+
+# stack = ["f"]
+
+# if stack:
+#     print("yes")
+
